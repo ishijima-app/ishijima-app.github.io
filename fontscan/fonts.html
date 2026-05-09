@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>対応フォント一覧 | フォントスキャン</title>
+  <meta name="description" content="フォントスキャンが対応している日本語フリーフォントの一覧です。">
+  <style>
+    :root {
+      --bg: #f7f7f8;
+      --card: #ffffff;
+      --text: #1d1d1f;
+      --subtle: #6e6e73;
+      --line: #e5e5e7;
+      --accent: #2563eb;
+      --accent-soft: #eff6ff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Hiragino Sans", "Noto Sans JP", "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .container {
+      width: min(960px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 56px 0 28px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+    }
+
+    .lead {
+      margin: 14px 0 0;
+      color: var(--subtle);
+      font-size: 1rem;
+    }
+
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .summary-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 16px 18px;
+    }
+
+    .summary-label {
+      display: block;
+      color: var(--subtle);
+      font-size: 0.92rem;
+    }
+
+    .summary-value {
+      display: block;
+      margin-top: 4px;
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(14px);
+      background: rgba(247, 247, 248, 0.88);
+      border-top: 1px solid transparent;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .toolbar-inner {
+      padding: 14px 0;
+    }
+
+    #searchInput {
+      width: 100%;
+      padding: 13px 15px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      font-size: 1rem;
+      background: #fff;
+      color: var(--text);
+      outline: none;
+    }
+
+    #searchInput:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+    }
+
+    .note {
+      margin: 10px 0 0;
+      color: var(--subtle);
+      font-size: 0.92rem;
+    }
+
+    main {
+      padding: 24px 0 64px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .family-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+    }
+
+    .family-head {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 1.12rem;
+      line-height: 1.35;
+      letter-spacing: -0.01em;
+    }
+
+    .count {
+      flex: 0 0 auto;
+      color: var(--subtle);
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+
+    .weights {
+      margin: 0;
+      color: var(--subtle);
+      font-size: 0.92rem;
+    }
+
+    .family-link {
+      margin-top: 12px;
+    }
+
+    .family-link a {
+      color: var(--accent);
+      font-size: 0.92rem;
+      font-weight: 400;
+      text-decoration: none;
+    }
+
+    .family-link a:hover {
+      text-decoration: underline;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    .empty {
+      display: none;
+      padding: 24px;
+      text-align: center;
+      color: var(--subtle);
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+    }
+
+    footer {
+      padding: 0 0 56px;
+      color: var(--subtle);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 720px) {
+      header {
+        padding-top: 36px;
+      }
+      .summary,
+      .grid {
+        grid-template-columns: 1fr;
+      }
+      .family-head {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="container">
+    <h1>対応フォント一覧</h1>
+    <p class="lead">フォントスキャンが対応している日本語フリーフォントの一覧です。ウェイト違いも個別に収録しています。</p>
+
+    <div class="summary" aria-label="対応数">
+      <div class="summary-card">
+        <span class="summary-label">フォントファミリー</span>
+        <span class="summary-value">42</span>
+      </div>
+      <div class="summary-card">
+        <span class="summary-label">フォント数（ウェイト含む）</span>
+        <span class="summary-value">79</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="toolbar">
+    <div class="container toolbar-inner">
+      <input id="searchInput" type="search" placeholder="フォント名で検索" aria-label="フォント名で検索">
+      <p class="note">ファミリー名で絞り込めます。例: Noto / Zen / 明朝 / ゴシック</p>
+    </div>
+  </div>
+
+  <main class="container">
+    <div id="familyGrid" class="grid">
+      
+    
+    <section class="family-card" id="BIZ-UD" data-search="BIZ UDゴシック Regular Bold BIZ UDGothic BIZ UDGothic BIZUDGothic-Bold BIZUDGothic-Regular BIZUDGothic-Bold BIZUDGothic-Regular">
+      <div class="family-head">
+        <h2>BIZ UDゴシック</h2>
+        <span class="count">2フォント</span>
+      </div>
+      <p class="weights">Regular, Bold</p>
+    </section>
+
+    <section class="family-card" id="BIZ-UD-2" data-search="BIZ UD明朝 Regular Bold BIZ UDMincho BIZ UDMincho BIZUDMincho-Bold BIZUDMincho-Regular BIZUDMincho-Bold BIZUDMincho-Regular">
+      <div class="family-head">
+        <h2>BIZ UD明朝</h2>
+        <span class="count">2フォント</span>
+      </div>
+      <p class="weights">Regular, Bold</p>
+    </section>
+
+    <section class="family-card" id="IBM-Plex-Sans-JP" data-search="IBM Plex Sans JP Thin ExtraLight Light Regular Medium SemiBold Bold IBM Plex Sans JP IBM Plex Sans JP ExtraLight IBM Plex Sans JP Light IBM Plex Sans JP Medium IBM Plex Sans JP IBM Plex Sans JP SemiBold IBM Plex Sans JP Thin IBMPlexSansJP-Bold IBMPlexSansJP-ExtraLight IBMPlexSansJP-Light IBMPlexSansJP-Medium IBMPlexSansJP-Regular IBMPlexSansJP-SemiBold IBMPlexSansJP-Thin IBMPlexSansJP-Bold IBMPlexSansJP-ExtraLight IBMPlexSansJP-Light IBMPlexSansJP-Medium IBMPlexSansJP-Regular IBMPlexSansJP-SemiBold IBMPlexSansJP-Thin">
+      <div class="family-head">
+        <h2>IBM Plex Sans JP</h2>
+        <span class="count">7フォント</span>
+      </div>
+      <p class="weights">Thin, ExtraLight, Light, Regular, Medium, SemiBold, Bold</p>
+    </section>
+
+    <section class="family-card" id="M-PLUS-1" data-search="M PLUS 1 Regular SemiBold ExtraBold M PLUS 1 M PLUS 1 SemiBold M PLUS 1 ExtraBold MPLUS1-VariableFont_wght-400 MPLUS1-VariableFont_wght-600 MPLUS1-VariableFont_wght-800 MPLUS1-Regular MPLUS1-SemiBold MPLUS1-ExtraBold">
+      <div class="family-head">
+        <h2>M PLUS 1</h2>
+        <span class="count">3フォント</span>
+      </div>
+      <p class="weights">Regular, SemiBold, ExtraBold</p>
+    </section>
+
+    <section class="family-card" id="M-PLUS-2" data-search="M PLUS 2 Regular SemiBold ExtraBold M PLUS 2 M PLUS 2 SemiBold M PLUS 2 ExtraBold MPLUS2-VariableFont_wght-400 MPLUS2-VariableFont_wght-600 MPLUS2-VariableFont_wght-800 MPLUS2-Regular MPLUS2-SemiBold MPLUS2-ExtraBold">
+      <div class="family-head">
+        <h2>M PLUS 2</h2>
+        <span class="count">3フォント</span>
+      </div>
+      <p class="weights">Regular, SemiBold, ExtraBold</p>
+    </section>
+
+    <section class="family-card" id="M-PLUS-Rounded-1c" data-search="M PLUS Rounded 1c Thin Regular Bold Black Rounded Mplus 1c Black Rounded Mplus 1c Bold Rounded Mplus 1c Rounded Mplus 1c Thin MPLUSRounded1c-Black MPLUSRounded1c-Bold MPLUSRounded1c-Regular MPLUSRounded1c-Thin RoundedMplus1c-Black RoundedMplus1c-Bold RoundedMplus1c-Regular RoundedMplus1c-Thin">
+      <div class="family-head">
+        <h2>M PLUS Rounded 1c</h2>
+        <span class="count">4フォント</span>
+      </div>
+      <p class="weights">Thin, Regular, Bold, Black</p>
+    </section>
+
+    <section class="family-card" id="Noto-Sans-JP" data-search="Noto Sans JP Thin Regular SemiBold Black Noto Sans JP Black Noto Sans JP Noto Sans JP SemiBold Noto Sans JP Thin NotoSansJP-Black NotoSansJP-Regular NotoSansJP-SemiBold NotoSansJP-Thin NotoSansJP-Black NotoSansJP-Regular NotoSansJP-SemiBold NotoSansJP-Thin">
+      <div class="family-head">
+        <h2>Noto Sans JP</h2>
+        <span class="count">4フォント</span>
+      </div>
+      <p class="weights">Thin, Regular, SemiBold, Black</p>
+    </section>
+
+    <section class="family-card" id="Noto-Serif-JP" data-search="Noto Serif JP ExtraLight Regular SemiBold Black Noto Serif JP Black Noto Serif JP ExtraLight Noto Serif JP Noto Serif JP SemiBold NotoSerifJP-Black NotoSerifJP-ExtraLight NotoSerifJP-Regular NotoSerifJP-SemiBold NotoSerifJP-Black NotoSerifJP-ExtraLight NotoSerifJP-Regular NotoSerifJP-SemiBold">
+      <div class="family-head">
+        <h2>Noto Serif JP</h2>
+        <span class="count">4フォント</span>
+      </div>
+      <p class="weights">ExtraLight, Regular, SemiBold, Black</p>
+    </section>
+
+    <section class="family-card" id="WDXL-Lubrifont-JPN" data-search="WDXL Lubrifont JPN Regular WDXL Lubrifont JP N WDXLLubrifontJPN-Regular WDXLLubrifontJPN-Regular">
+      <div class="family-head">
+        <h2>WDXL Lubrifont JPN</h2>
+        <span class="count">1フォント</span>
+      </div>
+      <p class="weights">Regular</p>
+    </section>
+
+    <section class="family-card" id="Zen-Old" data-search="Zen Old 明朝 Regular SemiBold Black Zen Old Mincho Black Zen Old Mincho Zen Old Mincho SemiBold ZenOldMincho-Black ZenOldMincho-Regular ZenOldMincho-SemiBold ZenOldMincho-Black ZenOldMincho-Regular ZenOldMincho-SemiBold">
+      <div class="family-head">
+        <h2>Zen Old 明朝</h2>
+        <span class="count">3フォント</span>
+      </div>
+      <p class="weights">Regular, SemiBold, Black</p>
+    </section>
+
+    <section class="family-card" id="Zen" data-search="Zen アンチック Regular Zen Antique ZenAntique-Regular ZenAntique-Regular">
+      <div class="family-head">
+        <h2>Zen アンチック</h2>
+        <span class="count">1フォント</span>
+      </div>
+      <p class="weights">Regular</p>
+    </section>
+
+    <section class="family-card" id="Zen-2" data-search="Zen 丸ゴシック Regular Bold Black Zen Maru Gothic Black Zen Maru Gothic Zen Maru Gothic ZenMaruGothic-Black ZenMaruGothic-Bold ZenMaruGothic-Regular ZenMaruGothic-Black ZenMaruGothic-Bold ZenMaruGothic-Regular">
+      <div class="family-head">
+        <h2>Zen 丸ゴシック</h2>
+        <span class="count">3フォント</span>
+      </div>
+      <p class="weights">Regular, Bold, Black</p>
+    </section>
+
+    <section class="family-card" id="Zen-3" data-search="Zen 紅道 Regular Zen Kurenaido ZenKurenaido-Regular ZenKurenaido-Regular">
+      <div class="family-head">
+        <h2>Zen 紅道</h2>
+        <span class="count">1フォント</span>
+      </div>
+      <p class="weights">Regular</p>
+    </section>
+
+    <section class="family-card" id="Zen-Antique" data-search="Zen 角ゴシック Antique Regular Bold Black Zen Kaku Gothic Antique Black Zen Kaku Gothic Antique Zen Kaku Gothic Antique ZenKakuGothicAntique-Black ZenKakuGothicAntique-Bold ZenKakuGothicAntique-Regular ZenKakuGothicAntique-Black ZenKakuGothicAntique-Bold ZenKakuGothicAntique-Regular">
+      <div class="family-head">
+        <h2>Zen 角ゴシック Antique</h2>
+        <span class="count">3フォント</span>
+      </div>
+      <p class="weights">Regular, Bold, Black</p>
+    </section>
+
+    <section class="family-card" id="Zen-New" data-search="Zen 角ゴシック New Regular Bold Black Zen Kaku Gothic New Black Zen Kaku Gothic New Zen Kaku Gothic New ZenKakuGothicNew-Black ZenKakuGothicNew-Bold ZenKakuGothicNew-Regular ZenKakuGothicNew-Black ZenKakuGothicNew-Bold ZenKakuGothicNew-Regular">
+      <div class="family-head">
+        <h2>Zen 角ゴシック New</h2>
+        <span class="count">3フォント</span>
+      </div>
+      <p class="weights">Regular, Bold, Black</p>
+    </section>
+
+    <section class="family-card" id="font-family" data-search="さわらびゴシック Regular Sawarabi Gothic SawarabiGothic-Regular SawarabiGothic-Regular">
+      <div class="family-head">
+        <h2>さわらびゴシック</h2>
+        <span class="count">1フォント</span>
+      </div>
+      <p class="weights">Regular</p>
+    </section>
+
+    <section class="family-card" id="font-family-2" data-search="しっぽりアンチック Regular Shippori Antique ShipporiAntique-Regular ShipporiAntique-Regular">
+      <div class="family-head">
+        <h2>しっぽりアンチック</h2>
+        <span class="count">1フォント</span>
+      </div>
+      <p class="weights">Regular</p>
+    </section>
+
+    <section class="family-card" id="font-family-3" data-search="しっぽり明朝 Regular SemiBold ExtraBold Shippori Mincho ExtraBold Shippori Mincho Shippori Mincho SemiBold ShipporiMincho-ExtraBold ShipporiMincho-Regular ShipporiMincho-SemiBold ShipporiMincho-ExtraBold ShipporiMincho-Regular ShipporiMincho-SemiBold">
+      <div class="family-head">
+        <h2>しっぽり明朝</h2>
+        <span class="count">3フォント</span>
+      </div>
+      <p class="weights">Regular, SemiBold, ExtraBold</p>
+    </section>
+
+    <section class="family-card" id="font-family-4" data-search="はちまるポップ Regular Hachi Maru Pop HachiMaruPop-Regular HachiMaruPop-Regular">
+      <div class="family-head">
+        <h2>はちまるポップ</h2>
+        <span class="count">1フォント</span>
+      </div>
+      <p class="weights">Regular</p>
+    </section>
+
+    <section class="family-card" id="font-family-5" data-search="ひな明朝 Regular Hina Mincho HinaMincho-Regular HinaMincho-Regular">
+      <div class="family-head">
+        <h2>ひな明朝</h2>
+        <span class="count">1フォント</span>
+      </div>
+      <p class="weights">Regular</p>
+    </section>
+
+    <section class="family-card" id="font-family-6" data-search="キウイ丸 Regular Kiwi Maru KiwiMaru-Regular KiwiMaru-Regular">
+      <div class="family-head">
+        <h2>キウイ丸</h2>
+        <span class="count">1フォント</span>
+      </div>
+      <p class="weights">Regular</p>
+    </section>
+
+    <section class="family-card" id="One" data-search="クレー One Regular Klee One KleeOne-Regular KleeOne-Regular">
+      <div class="family-head">
+        <h2>クレー One</h2>
+        <span class="count">1フォント</span>
+      </div>
+      <p class="weights">Regular</p>
+    </section>
+
+    <section class="family-card" id="font-family-7" data-search="ステッキ Regular Stick Stick-Regular Stick-Regular">
+      <div class="family-head">
+        <h2>ステッキ</h2>
+        <span class="count">1フォント</span>
+      </div>
+      <p class="weights">Regular</p>
+    </section>
+
+    <section class="family-card" id="One-2" data-search="デラゴシック One Regular Dela Gothic One DelaGothicOne-Regular DelaGothicOne-Regular">
+      <div class="family-head">
+        <h2>デラゴシック One</h2>
+        <span class="count">1フォント</span>
+      </div>
+      <p class="weights">Regular</p>
+    </section>
+
+    <section class="family-card" id="16" data-search="ドットゴシック16 Regular DotGothic16 DotGothic16-Regular DotGothic16-Regular">
+      <div class="family-head">
+        <h2>ドットゴシック16</h2>
+        <span class="count">1フォント</span>
+      </div>
+      <p class="weights">Regular</p>
+    </section>
+
+    <section class="family-card" id="font-family-8" data-search="ニューテゴミン Regular New Tegomin NewTegomin-Regular NewTegomin-Regular">
+      <div class="family-head">
+        <h2>ニューテゴミン</h2>
+        <span class="count">1フォント</span>
+      </div>
+      <p class="weights">Regular</p>
+    </section>
+
+    <section class="family-card" id="One-3" data-search="ポッタ One Regular Potta One PottaOne-Regular PottaOne-Regular">
+      <div class="family-head">
+        <h2>ポッタ One</h2>
+        <span class="count">1フォント</span>
+      </div>
+      <p class="weights">Regular</p>
+    </section>
+
+    <section class="family-card" id="One-4" data-search="モッチーポップ One Regular Mochiy Pop One MochiyPopOne-Regular MochiyPopOne-Regular">
+      <div class="family-head">
+        <h2>モッチーポップ One</h2>
+        <span class="count">1フォント</span>
+      </div>
+      <p class="weights">Regular</p>
+    </section>
+
+    <section class="family-card" id="One-5" data-search="ランパート One Regular Rampart One RampartOne-Regular RampartOne-Regular">
+      <div class="family-head">
+        <h2>ランパート One</h2>
+        <span class="count">1フォント</span>
+      </div>
+      <p class="weights">Regular</p>
+    </section>
+
+    <section class="family-card" id="One-6" data-search="レゲエ One Regular Reggae One ReggaeOne-Regular ReggaeOne-Regular">
+      <div class="family-head">
+        <h2>レゲエ One</h2>
+        <span class="count">1フォント</span>
+      </div>
+      <p class="weights">Regular</p>
+    </section>
+
+    <section class="family-card" id="One-7" data-search="ロックンロール One Regular RocknRoll One RocknRollOne-Regular RocknRollOne-Regular">
+      <div class="family-head">
+        <h2>ロックンロール One</h2>
+        <span class="count">1フォント</span>
+      </div>
+      <p class="weights">Regular</p>
+    </section>
+
+    <section class="family-card" id="font-family-9" data-search="佑字 朴 Regular Yuji Boku YujiBoku-Regular YujiBoku-Regular">
+      <div class="family-head">
+        <h2>佑字 朴</h2>
+        <span class="count">1フォント</span>
+      </div>
+      <p class="weights">Regular</p>
+    </section>
+
+    <section class="family-card" id="font-family-10" data-search="佑字 肅 Regular Yuji Syuku YujiSyuku-Regular YujiSyuku-Regular">
+      <div class="family-head">
+        <h2>佑字 肅</h2>
+        <span class="count">1フォント</span>
+      </div>
+      <p class="weights">Regular</p>
+    </section>
+
+    <section class="family-card" id="font-family-11" data-search="佑字 舞 Regular Yuji Mai YujiMai-Regular YujiMai-Regular">
+      <div class="family-head">
+        <h2>佑字 舞</h2>
+        <span class="count">1フォント</span>
+      </div>
+      <p class="weights">Regular</p>
+    </section>
+
+    <section class="family-card" id="font-family-12" data-search="小杉 Regular Kosugi Kosugi-Regular Kosugi-Regular">
+      <div class="family-head">
+        <h2>小杉</h2>
+        <span class="count">1フォント</span>
+      </div>
+      <p class="weights">Regular</p>
+    </section>
+
+    <section class="family-card" id="font-family-13" data-search="小杉丸 Regular Kosugi Maru KosugiMaru-Regular KosugiMaru-Regular">
+      <div class="family-head">
+        <h2>小杉丸</h2>
+        <span class="count">1フォント</span>
+      </div>
+      <p class="weights">Regular</p>
+    </section>
+
+    <section class="family-card" id="font-family-14" data-search="油性マジック Regular Yusei Magic YuseiMagic-Regular YuseiMagic-Regular">
+      <div class="family-head">
+        <h2>油性マジック</h2>
+        <span class="count">1フォント</span>
+      </div>
+      <p class="weights">Regular</p>
+    </section>
+
+    <section class="family-card" id="font-family-15" data-search="牟礼町 Regular SemiBold ExtraBold Murecho Murecho SemiBold Murecho ExtraBold Murecho-VariableFont_wght-400 Murecho-VariableFont_wght-600 Murecho-VariableFont_wght-800 Murecho-Regular Murecho-SemiBold Murecho-ExtraBold">
+      <div class="family-head">
+        <h2>牟礼町</h2>
+        <span class="count">3フォント</span>
+      </div>
+      <p class="weights">Regular, SemiBold, ExtraBold</p>
+    </section>
+
+    <section class="family-card" id="font-family-16" data-search="解星 春の海 Regular Bold Kaisei HarunoUmi Kaisei HarunoUmi KaiseiHarunoUmi-Bold KaiseiHarunoUmi-Regular KaiseiHarunoUmi-Bold KaiseiHarunoUmi-Regular">
+      <div class="family-head">
+        <h2>解星 春の海</h2>
+        <span class="count">2フォント</span>
+      </div>
+      <p class="weights">Regular, Bold</p>
+    </section>
+
+    <section class="family-card" id="font-family-17" data-search="解星 特ミン Regular Bold Kaisei Tokumin Kaisei Tokumin KaiseiTokumin-Bold KaiseiTokumin-Regular KaiseiTokumin-Bold KaiseiTokumin-Regular">
+      <div class="family-head">
+        <h2>解星 特ミン</h2>
+        <span class="count">2フォント</span>
+      </div>
+      <p class="weights">Regular, Bold</p>
+    </section>
+
+    <section class="family-card" id="font-family-18" data-search="解星オプティ Regular Bold Kaisei Opti Kaisei Opti KaiseiOpti-Bold KaiseiOpti-Regular KaiseiOpti-Bold KaiseiOpti-Regular">
+      <div class="family-head">
+        <h2>解星オプティ</h2>
+        <span class="count">2フォント</span>
+      </div>
+      <p class="weights">Regular, Bold</p>
+    </section>
+
+    <section class="family-card" id="font-family-19" data-search="解星デコール Regular Bold Kaisei Decol Kaisei Decol KaiseiDecol-Bold KaiseiDecol-Regular KaiseiDecol-Bold KaiseiDecol-Regular">
+      <div class="family-head">
+        <h2>解星デコール</h2>
+        <span class="count">2フォント</span>
+      </div>
+      <p class="weights">Regular, Bold</p>
+    </section>
+    
+    </div>
+    <div id="emptyState" class="empty">一致するフォントが見つかりませんでした。</div>
+  </main>
+
+  <footer class="container">
+    最終更新日: 2026年5月
+  </footer>
+
+  <script>
+    const input = document.getElementById('searchInput');
+    const cards = Array.from(document.querySelectorAll('.family-card'));
+    const emptyState = document.getElementById('emptyState');
+    const googleFontsFamilies = {
+      'BIZ UDPゴシック': 'BIZ UDPGothic',
+      'BIZ UDP明朝': 'BIZ UDPMincho',
+      'BIZ UDゴシック': 'BIZ UDGothic',
+      'BIZ UD明朝': 'BIZ UDMincho',
+      'IBM Plex Sans JP': 'IBM Plex Sans JP',
+      'M PLUS 1': 'M PLUS 1',
+      'M PLUS 1 Code': 'M PLUS 1 Code',
+      'M PLUS 1p': 'M PLUS 1p',
+      'M PLUS 2': 'M PLUS 2',
+      'M PLUS Rounded 1c': 'M PLUS Rounded 1c',
+      'Noto Sans JP': 'Noto Sans JP',
+      'Noto Serif JP': 'Noto Serif JP',
+      'WDXL Lubrifont JPN': 'WDXL Lubrifont JP N',
+      'Zen Old 明朝': 'Zen Old Mincho',
+      'Zen アンチック': 'Zen Antique',
+      'Zen アンチック Soft': 'Zen Antique Soft',
+      'Zen 丸ゴシック': 'Zen Maru Gothic',
+      'Zen 紅道': 'Zen Kurenaido',
+      'Zen 角ゴシック Antique': 'Zen Kaku Gothic Antique',
+      'Zen 角ゴシック New': 'Zen Kaku Gothic New',
+      'さわらびゴシック': 'Sawarabi Gothic',
+      'しっぽりアンチック': 'Shippori Antique',
+      'しっぽりアンチック B1': 'Shippori Antique B1',
+      'しっぽり明朝': 'Shippori Mincho',
+      'しっぽり明朝 B1': 'Shippori Mincho B1',
+      'はちまるポップ': 'Hachi Maru Pop',
+      'ひな明朝': 'Hina Mincho',
+      '佑字 朴': 'Yuji Boku',
+      '佑字 肅': 'Yuji Syuku',
+      '佑字 舞': 'Yuji Mai',
+      'キウイ丸': 'Kiwi Maru',
+      'クレー One': 'Klee One',
+      'ステッキ': 'Stick',
+      'デラゴシック One': 'Dela Gothic One',
+      'ドットゴシック16': 'DotGothic16',
+      'ニューテゴミン': 'New Tegomin',
+      'ポッタ One': 'Potta One',
+      '牟礼町': 'Murecho',
+      'モッチーポップ One': 'Mochiy Pop One',
+      'モッチーポップ P One': 'Mochiy Pop P One',
+      '油性マジック': 'Yusei Magic',
+      'ランパート One': 'Rampart One',
+      'レゲエ One': 'Reggae One',
+      'ロックンロール One': 'RocknRoll One',
+      '小杉': 'Kosugi',
+      '小杉丸': 'Kosugi Maru',
+      '解星 春の海': 'Kaisei HarunoUmi',
+      '解星 特ミン': 'Kaisei Tokumin',
+      '解星オプティ': 'Kaisei Opti',
+      '解星デコール': 'Kaisei Decol'
+    };
+
+    function normalize(text) {
+      return text.toLowerCase().replace(/\s+/g, '');
+    }
+
+    function createGoogleFontsUrl(familyName) {
+      return `https://fonts.google.com/specimen/${familyName.replace(/\s+/g, '+')}`;
+    }
+
+    function addGoogleFontsLinks() {
+      cards.forEach(card => {
+        const heading = card.querySelector('h2');
+        const weights = card.querySelector('.weights');
+        const familyName = googleFontsFamilies[heading?.textContent?.trim()];
+
+        if (!heading || !weights || !familyName) {
+          return;
+        }
+
+        const linkWrap = document.createElement('p');
+        linkWrap.className = 'family-link';
+
+        const link = document.createElement('a');
+        link.href = createGoogleFontsUrl(familyName);
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.textContent = 'Google Fonts';
+
+        linkWrap.appendChild(link);
+        weights.insertAdjacentElement('afterend', linkWrap);
+      });
+    }
+
+    function filterCards() {
+      const query = normalize(input.value);
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const text = normalize(`${card.innerText} ${card.dataset.search || ''}`);
+        const matched = !query || text.includes(query);
+        card.classList.toggle('hidden', !matched);
+        if (matched) visibleCount += 1;
+      });
+
+      emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
+    }
+
+    addGoogleFontsLinks();
+    input.addEventListener('input', filterCards);
+  </script>
+</body>
+</html>

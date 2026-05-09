@@ -3,39 +3,126 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>フォントスキャン サポート</title>
+  <title>フォントスキャン – 日本語フリーフォント検索</title>
   <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-      max-width: 720px;
-      margin: 40px auto;
-      padding: 0 16px;
-      line-height: 1.7;
-      color: #222;
+    :root {
+      --text: #1d1d1f;
+      --subtle: #6e6e73;
+      --line: #e5e5e7;
+      --accent: #2563eb;
+      --bg: #ffffff;
     }
-    h1, h2 {
-      margin-top: 24px;
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 56px 20px 72px;
+      line-height: 1.8;
+    }
+
+    header {
+      margin-bottom: 40px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .lead {
+      margin: 12px 0 0;
+      color: var(--subtle);
+      font-size: 1rem;
+    }
+
+    section {
+      margin-top: 36px;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    p, ol {
+      margin: 0;
+    }
+
+    ol {
+      padding-left: 1.4em;
+    }
+
+    li + li {
+      margin-top: 6px;
+    }
+
+    .note {
+      color: var(--subtle);
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: 48px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      color: var(--subtle);
+      font-size: 0.95rem;
     }
   </style>
 </head>
 <body>
 
-<h1>フォントスキャン サポート</h1>
+  <header>
+    <h1>フォントスキャン – 日本語フリーフォント検索</h1>
+    <p class="lead">写真から類似の日本語フリーフォントを検索するアプリです。</p>
+  </header>
 
-<p>フォントスキャンは、写真から日本語フリーフォントの類似候補を検索するアプリです。</p>
+  <section>
+    <h2>対応フォント</h2>
+    <p>本アプリは42ファミリー・79フォント（ウェイト違い含む）の日本語フリーフォントに対応しています。</p>
+    <p><a href="fonts.html">対応フォント一覧を見る</a></p>
+  </section>
 
-<h2>使い方</h2>
-<ol>
-  <li>文字を撮影します</li>
-  <li>判定したい文字を選択します</li>
-  <li>AIが類似フォントを表示します</li>
-</ol>
+  <section>
+    <h2>注意事項</h2>
+    <p class="note">
+      本アプリは、すべてのフォントを完全に特定するものではなく、
+      学習済みの日本語フリーフォントの中から類似候補を提案するものです。
+    </p>
+  </section>
 
-<h2>注意事項</h2>
-<p>本アプリは、すべてのフォントを完全に特定するものではなく、学習済みの日本語フリーフォントの中から類似候補を提案するものです。</p>
+  <section>
+    <h2>お問い合わせ</h2>
+    <p>
+      メール:
+      <a href="mailto:fowrihms@gmail.com">fowrihms@gmail.com</a>
+    </p>
+  </section>
 
-<h2>お問い合わせ</h2>
-<p>メール: your-email@example.com</p>
+  <footer>
+    最終更新日: 2026年5月
+  </footer>
 
 </body>
 </html>
