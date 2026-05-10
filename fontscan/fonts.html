@@ -126,17 +126,15 @@
 
     .family-card {
       display: grid;
-      grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.2fr);
-      gap: 12px 24px;
-      padding: 16px 0;
+      grid-template-columns: minmax(180px, 320px) minmax(180px, 260px);
+      justify-content: start;
+      gap: 4px 40px;
+      padding: 14px 0;
       border-bottom: 1px solid var(--line);
     }
 
     .family-head {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 12px;
+      display: contents;
     }
 
     h2 {
@@ -147,22 +145,29 @@
     }
 
     .count {
-      flex: 0 0 auto;
+      grid-column: 2;
+      grid-row: 1;
       color: var(--subtle);
       font-size: 0.9rem;
+      text-align: right;
       white-space: nowrap;
     }
 
     .weights {
+      grid-column: 2;
+      grid-row: 2;
       margin: 0;
       color: var(--subtle);
       font-size: 0.92rem;
       line-height: 1.55;
+      text-align: right;
+      overflow-wrap: anywhere;
     }
 
     .family-link {
-      grid-column: 2;
-      margin: -6px 0 0;
+      grid-column: 1;
+      grid-row: 2;
+      margin: 0;
     }
 
     .family-link a {
@@ -208,16 +213,9 @@
         padding-top: 18px;
       }
       .family-card {
-        grid-template-columns: 1fr;
-        gap: 4px;
+        grid-template-columns: minmax(0, 1fr) minmax(150px, 56%);
+        gap: 3px 12px;
         padding: 12px 0;
-      }
-      .family-head {
-        gap: 10px;
-      }
-      .family-link {
-        grid-column: auto;
-        margin-top: 2px;
       }
     }
   </style>
