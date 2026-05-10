@@ -55,31 +55,29 @@
     }
 
     .summary {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 20px;
       margin-top: 24px;
+      padding: 12px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
     }
 
     .summary-card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 16px 18px;
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
     }
 
     .summary-label {
-      display: block;
       color: var(--subtle);
       font-size: 0.92rem;
     }
 
     .summary-value {
-      display: block;
-      margin-top: 4px;
-      font-size: 1.6rem;
+      font-size: 1.1rem;
       font-weight: 700;
-      letter-spacing: -0.02em;
     }
 
     .toolbar {
@@ -123,30 +121,27 @@
     }
 
     .grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
+      border-top: 1px solid var(--line);
     }
 
     .family-card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 18px;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+      display: grid;
+      grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.2fr);
+      gap: 12px 24px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line);
     }
 
     .family-head {
       display: flex;
-      align-items: start;
+      align-items: baseline;
       justify-content: space-between;
       gap: 12px;
-      margin-bottom: 14px;
     }
 
     h2 {
       margin: 0;
-      font-size: 1.12rem;
+      font-size: 1.04rem;
       line-height: 1.35;
       letter-spacing: -0.01em;
     }
@@ -162,10 +157,12 @@
       margin: 0;
       color: var(--subtle);
       font-size: 0.92rem;
+      line-height: 1.55;
     }
 
     .family-link {
-      margin-top: 12px;
+      grid-column: 2;
+      margin: -6px 0 0;
     }
 
     .family-link a {
@@ -201,14 +198,26 @@
 
     @media (max-width: 720px) {
       header {
-        padding-top: 36px;
+        padding: 36px 0 20px;
       }
-      .summary,
-      .grid {
+      .summary {
+        gap: 6px 16px;
+        margin-top: 18px;
+      }
+      main {
+        padding-top: 18px;
+      }
+      .family-card {
         grid-template-columns: 1fr;
+        gap: 4px;
+        padding: 12px 0;
       }
       .family-head {
-        flex-direction: column;
+        gap: 10px;
+      }
+      .family-link {
+        grid-column: auto;
+        margin-top: 2px;
       }
     }
   </style>
