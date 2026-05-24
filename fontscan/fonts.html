@@ -80,36 +80,6 @@
       font-weight: 700;
     }
 
-    .toolbar {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      backdrop-filter: blur(14px);
-      background: rgba(247, 247, 248, 0.88);
-      border-top: 1px solid transparent;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .toolbar-inner {
-      padding: 14px 0;
-    }
-
-    #searchInput {
-      width: 100%;
-      padding: 13px 15px;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      font-size: 1rem;
-      background: #fff;
-      color: var(--text);
-      outline: none;
-    }
-
-    #searchInput:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
-    }
-
     main {
       padding: 24px 0 64px;
     }
@@ -175,20 +145,6 @@
       text-decoration: underline;
     }
 
-    .hidden {
-      display: none !important;
-    }
-
-    .empty {
-      display: none;
-      padding: 24px;
-      text-align: center;
-      color: var(--subtle);
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-    }
-
     footer {
       padding: 0 0 56px;
       color: var(--subtle);
@@ -229,18 +185,12 @@
     </div>
   </header>
 
-  <div class="toolbar">
-    <div class="container toolbar-inner">
-      <input id="searchInput" type="search" placeholder="フォント名で検索" aria-label="フォント名で検索">
-    </div>
-  </div>
-
   <main class="container">
     <div id="familyGrid" class="grid">
       
     
     
-    <section class="family-card" id="BIZ-UD" data-search="BIZ UDゴシック Regular Bold BIZ UDGothic BIZUDGothic-Regular BIZUDGothic-Regular BIZ UDGothic BIZUDGothic-Bold BIZUDGothic-Bold">
+    <section class="family-card" id="BIZ-UD">
       <div class="family-head">
         <h2>BIZ UDゴシック</h2>
         <span class="count">2フォント</span>
@@ -248,7 +198,7 @@
       <p class="weights">Regular, Bold</p>
     </section>
 
-    <section class="family-card" id="BIZ-UD-2" data-search="BIZ UD明朝 Regular Bold BIZ UDMincho BIZUDMincho-Regular BIZUDMincho-Regular BIZ UDMincho BIZUDMincho-Bold BIZUDMincho-Bold">
+    <section class="family-card" id="BIZ-UD-2">
       <div class="family-head">
         <h2>BIZ UD明朝</h2>
         <span class="count">2フォント</span>
@@ -256,7 +206,7 @@
       <p class="weights">Regular, Bold</p>
     </section>
 
-    <section class="family-card" id="One" data-search="デラゴシック One Regular Dela Gothic One DelaGothicOne-Regular DelaGothicOne-Regular">
+    <section class="family-card" id="One">
       <div class="family-head">
         <h2>デラゴシック One</h2>
         <span class="count">1フォント</span>
@@ -264,7 +214,7 @@
       <p class="weights">Regular</p>
     </section>
 
-    <section class="family-card" id="16" data-search="ドットゴシック16 Regular DotGothic16 DotGothic16-Regular DotGothic16-Regular">
+    <section class="family-card" id="16">
       <div class="family-head">
         <h2>ドットゴシック16</h2>
         <span class="count">1フォント</span>
@@ -272,7 +222,7 @@
       <p class="weights">Regular</p>
     </section>
 
-    <section class="family-card" id="font-family" data-search="はちまるポップ Regular Hachi Maru Pop HachiMaruPop-Regular HachiMaruPop-Regular">
+    <section class="family-card" id="font-family">
       <div class="family-head">
         <h2>はちまるポップ</h2>
         <span class="count">1フォント</span>
@@ -280,7 +230,7 @@
       <p class="weights">Regular</p>
     </section>
 
-    <section class="family-card" id="font-family-2" data-search="ひな明朝 Regular Hina Mincho HinaMincho-Regular HinaMincho-Regular">
+    <section class="family-card" id="font-family-2">
       <div class="family-head">
         <h2>ひな明朝</h2>
         <span class="count">1フォント</span>
@@ -288,7 +238,7 @@
       <p class="weights">Regular</p>
     </section>
 
-    <section class="family-card" id="IBM-Plex-Sans-JP" data-search="IBM Plex Sans JP Thin Regular Bold IBM Plex Sans JP Thin IBMPlexSansJP-Thin IBMPlexSansJP-Thin IBM Plex Sans JP IBMPlexSansJP-Regular IBMPlexSansJP-Regular IBM Plex Sans JP IBMPlexSansJP-Bold IBMPlexSansJP-Bold">
+    <section class="family-card" id="IBM-Plex-Sans-JP">
       <div class="family-head">
         <h2>IBM Plex Sans JP</h2>
         <span class="count">3フォント</span>
@@ -296,7 +246,7 @@
       <p class="weights">Thin, Regular, Bold</p>
     </section>
 
-    <section class="family-card" id="font-family-3" data-search="解星デコール Regular Bold Kaisei Decol KaiseiDecol-Regular KaiseiDecol-Regular Kaisei Decol KaiseiDecol-Bold KaiseiDecol-Bold">
+    <section class="family-card" id="font-family-3">
       <div class="family-head">
         <h2>解星デコール</h2>
         <span class="count">2フォント</span>
@@ -304,7 +254,7 @@
       <p class="weights">Regular, Bold</p>
     </section>
 
-    <section class="family-card" id="font-family-4" data-search="解星 春の海 Regular Bold Kaisei HarunoUmi KaiseiHarunoUmi-Regular KaiseiHarunoUmi-Regular Kaisei HarunoUmi KaiseiHarunoUmi-Bold KaiseiHarunoUmi-Bold">
+    <section class="family-card" id="font-family-4">
       <div class="family-head">
         <h2>解星 春の海</h2>
         <span class="count">2フォント</span>
@@ -312,7 +262,7 @@
       <p class="weights">Regular, Bold</p>
     </section>
 
-    <section class="family-card" id="font-family-5" data-search="解星オプティ Regular Bold Kaisei Opti KaiseiOpti-Regular KaiseiOpti-Regular Kaisei Opti KaiseiOpti-Bold KaiseiOpti-Bold">
+    <section class="family-card" id="font-family-5">
       <div class="family-head">
         <h2>解星オプティ</h2>
         <span class="count">2フォント</span>
@@ -320,7 +270,7 @@
       <p class="weights">Regular, Bold</p>
     </section>
 
-    <section class="family-card" id="font-family-6" data-search="解星 特ミン Regular Bold Kaisei Tokumin KaiseiTokumin-Regular KaiseiTokumin-Regular Kaisei Tokumin KaiseiTokumin-Bold KaiseiTokumin-Bold">
+    <section class="family-card" id="font-family-6">
       <div class="family-head">
         <h2>解星 特ミン</h2>
         <span class="count">2フォント</span>
@@ -328,7 +278,7 @@
       <p class="weights">Regular, Bold</p>
     </section>
 
-    <section class="family-card" id="font-family-7" data-search="キウイ丸 Regular Kiwi Maru KiwiMaru-Regular KiwiMaru-Regular">
+    <section class="family-card" id="font-family-7">
       <div class="family-head">
         <h2>キウイ丸</h2>
         <span class="count">1フォント</span>
@@ -336,7 +286,7 @@
       <p class="weights">Regular</p>
     </section>
 
-    <section class="family-card" id="One-2" data-search="クレー One Regular Klee One KleeOne-Regular KleeOne-Regular">
+    <section class="family-card" id="One-2">
       <div class="family-head">
         <h2>クレー One</h2>
         <span class="count">1フォント</span>
@@ -344,7 +294,7 @@
       <p class="weights">Regular</p>
     </section>
 
-    <section class="family-card" id="font-family-8" data-search="小杉 Regular Kosugi Kosugi-Regular Kosugi-Regular">
+    <section class="family-card" id="font-family-8">
       <div class="family-head">
         <h2>小杉</h2>
         <span class="count">1フォント</span>
@@ -352,7 +302,7 @@
       <p class="weights">Regular</p>
     </section>
 
-    <section class="family-card" id="font-family-9" data-search="小杉丸 Regular Kosugi Maru KosugiMaru-Regular KosugiMaru-Regular">
+    <section class="family-card" id="font-family-9">
       <div class="family-head">
         <h2>小杉丸</h2>
         <span class="count">1フォント</span>
@@ -360,7 +310,7 @@
       <p class="weights">Regular</p>
     </section>
 
-    <section class="family-card" id="M-PLUS-1" data-search="M PLUS 1 Regular SemiBold ExtraBold M PLUS 1 MPLUS1-VariableFont_wght-400 MPLUS1-Regular M PLUS 1 SemiBold MPLUS1-VariableFont_wght-600 MPLUS1-SemiBold M PLUS 1 ExtraBold MPLUS1-VariableFont_wght-800 MPLUS1-ExtraBold">
+    <section class="family-card" id="M-PLUS-1">
       <div class="family-head">
         <h2>M PLUS 1</h2>
         <span class="count">3フォント</span>
@@ -368,7 +318,7 @@
       <p class="weights">Regular, SemiBold, ExtraBold</p>
     </section>
 
-    <section class="family-card" id="M-PLUS-2" data-search="M PLUS 2 Regular SemiBold ExtraBold M PLUS 2 MPLUS2-VariableFont_wght-400 MPLUS2-Regular M PLUS 2 SemiBold MPLUS2-VariableFont_wght-600 MPLUS2-SemiBold M PLUS 2 ExtraBold MPLUS2-VariableFont_wght-800 MPLUS2-ExtraBold">
+    <section class="family-card" id="M-PLUS-2">
       <div class="family-head">
         <h2>M PLUS 2</h2>
         <span class="count">3フォント</span>
@@ -376,7 +326,7 @@
       <p class="weights">Regular, SemiBold, ExtraBold</p>
     </section>
 
-    <section class="family-card" id="M-PLUS-Rounded-1c" data-search="M PLUS Rounded 1c Thin Regular Bold Black Rounded Mplus 1c Thin MPLUSRounded1c-Thin RoundedMplus1c-Thin Rounded Mplus 1c MPLUSRounded1c-Regular RoundedMplus1c-Regular Rounded Mplus 1c Bold MPLUSRounded1c-Bold RoundedMplus1c-Bold Rounded Mplus 1c Black MPLUSRounded1c-Black RoundedMplus1c-Black">
+    <section class="family-card" id="M-PLUS-Rounded-1c">
       <div class="family-head">
         <h2>M PLUS Rounded 1c</h2>
         <span class="count">4フォント</span>
@@ -384,7 +334,7 @@
       <p class="weights">Thin, Regular, Bold, Black</p>
     </section>
 
-    <section class="family-card" id="One-3" data-search="モッチーポップ One Regular Mochiy Pop One MochiyPopOne-Regular MochiyPopOne-Regular">
+    <section class="family-card" id="One-3">
       <div class="family-head">
         <h2>モッチーポップ One</h2>
         <span class="count">1フォント</span>
@@ -392,7 +342,7 @@
       <p class="weights">Regular</p>
     </section>
 
-    <section class="family-card" id="font-family-10" data-search="牟礼町 Regular SemiBold ExtraBold Murecho Murecho-VariableFont_wght-400 Murecho-Regular Murecho SemiBold Murecho-VariableFont_wght-600 Murecho-SemiBold Murecho ExtraBold Murecho-VariableFont_wght-800 Murecho-ExtraBold">
+    <section class="family-card" id="font-family-10">
       <div class="family-head">
         <h2>牟礼町</h2>
         <span class="count">3フォント</span>
@@ -400,7 +350,7 @@
       <p class="weights">Regular, SemiBold, ExtraBold</p>
     </section>
 
-    <section class="family-card" id="font-family-11" data-search="ニューテゴミン Regular New Tegomin NewTegomin-Regular NewTegomin-Regular">
+    <section class="family-card" id="font-family-11">
       <div class="family-head">
         <h2>ニューテゴミン</h2>
         <span class="count">1フォント</span>
@@ -408,7 +358,7 @@
       <p class="weights">Regular</p>
     </section>
 
-    <section class="family-card" id="Noto-Sans-JP" data-search="Noto Sans JP Thin Regular SemiBold Black Noto Sans JP Thin NotoSansJP-Thin NotoSansJP-Thin Noto Sans JP NotoSansJP-Regular NotoSansJP-Regular Noto Sans JP SemiBold NotoSansJP-SemiBold NotoSansJP-SemiBold Noto Sans JP Black NotoSansJP-Black NotoSansJP-Black">
+    <section class="family-card" id="Noto-Sans-JP">
       <div class="family-head">
         <h2>Noto Sans JP</h2>
         <span class="count">4フォント</span>
@@ -416,7 +366,7 @@
       <p class="weights">Thin, Regular, SemiBold, Black</p>
     </section>
 
-    <section class="family-card" id="Noto-Serif-JP" data-search="Noto Serif JP ExtraLight Regular SemiBold Black Noto Serif JP ExtraLight NotoSerifJP-ExtraLight NotoSerifJP-ExtraLight Noto Serif JP NotoSerifJP-Regular NotoSerifJP-Regular Noto Serif JP SemiBold NotoSerifJP-SemiBold NotoSerifJP-SemiBold Noto Serif JP Black NotoSerifJP-Black NotoSerifJP-Black">
+    <section class="family-card" id="Noto-Serif-JP">
       <div class="family-head">
         <h2>Noto Serif JP</h2>
         <span class="count">4フォント</span>
@@ -424,7 +374,7 @@
       <p class="weights">ExtraLight, Regular, SemiBold, Black</p>
     </section>
 
-    <section class="family-card" id="One-4" data-search="ポッタ One Regular Potta One PottaOne-Regular PottaOne-Regular">
+    <section class="family-card" id="One-4">
       <div class="family-head">
         <h2>ポッタ One</h2>
         <span class="count">1フォント</span>
@@ -432,7 +382,7 @@
       <p class="weights">Regular</p>
     </section>
 
-    <section class="family-card" id="One-5" data-search="ランパート One Regular Rampart One RampartOne-Regular RampartOne-Regular">
+    <section class="family-card" id="One-5">
       <div class="family-head">
         <h2>ランパート One</h2>
         <span class="count">1フォント</span>
@@ -440,7 +390,7 @@
       <p class="weights">Regular</p>
     </section>
 
-    <section class="family-card" id="One-6" data-search="レゲエ One Regular Reggae One ReggaeOne-Regular ReggaeOne-Regular">
+    <section class="family-card" id="One-6">
       <div class="family-head">
         <h2>レゲエ One</h2>
         <span class="count">1フォント</span>
@@ -448,7 +398,7 @@
       <p class="weights">Regular</p>
     </section>
 
-    <section class="family-card" id="One-7" data-search="ロックンロール One Regular RocknRoll One RocknRollOne-Regular RocknRollOne-Regular">
+    <section class="family-card" id="One-7">
       <div class="family-head">
         <h2>ロックンロール One</h2>
         <span class="count">1フォント</span>
@@ -456,7 +406,7 @@
       <p class="weights">Regular</p>
     </section>
 
-    <section class="family-card" id="font-family-12" data-search="さわらびゴシック Regular Sawarabi Gothic SawarabiGothic-Regular SawarabiGothic-Regular">
+    <section class="family-card" id="font-family-12">
       <div class="family-head">
         <h2>さわらびゴシック</h2>
         <span class="count">1フォント</span>
@@ -464,7 +414,7 @@
       <p class="weights">Regular</p>
     </section>
 
-    <section class="family-card" id="font-family-13" data-search="しっぽりアンチック Regular Shippori Antique ShipporiAntique-Regular ShipporiAntique-Regular">
+    <section class="family-card" id="font-family-13">
       <div class="family-head">
         <h2>しっぽりアンチック</h2>
         <span class="count">1フォント</span>
@@ -472,7 +422,7 @@
       <p class="weights">Regular</p>
     </section>
 
-    <section class="family-card" id="font-family-14" data-search="しっぽり明朝 Regular SemiBold ExtraBold Shippori Mincho ShipporiMincho-Regular ShipporiMincho-Regular Shippori Mincho SemiBold ShipporiMincho-SemiBold ShipporiMincho-SemiBold Shippori Mincho ExtraBold ShipporiMincho-ExtraBold ShipporiMincho-ExtraBold">
+    <section class="family-card" id="font-family-14">
       <div class="family-head">
         <h2>しっぽり明朝</h2>
         <span class="count">3フォント</span>
@@ -480,7 +430,7 @@
       <p class="weights">Regular, SemiBold, ExtraBold</p>
     </section>
 
-    <section class="family-card" id="font-family-15" data-search="ステッキ Regular Stick Stick-Regular Stick-Regular">
+    <section class="family-card" id="font-family-15">
       <div class="family-head">
         <h2>ステッキ</h2>
         <span class="count">1フォント</span>
@@ -488,7 +438,7 @@
       <p class="weights">Regular</p>
     </section>
 
-    <section class="family-card" id="WDXL-Lubrifont-JPN" data-search="WDXL Lubrifont JPN Regular WDXL Lubrifont JP N WDXLLubrifontJPN-Regular WDXLLubrifontJPN-Regular">
+    <section class="family-card" id="WDXL-Lubrifont-JPN">
       <div class="family-head">
         <h2>WDXL Lubrifont JPN</h2>
         <span class="count">1フォント</span>
@@ -496,7 +446,7 @@
       <p class="weights">Regular</p>
     </section>
 
-    <section class="family-card" id="font-family-16" data-search="佑字 朴 Regular Yuji Boku YujiBoku-Regular YujiBoku-Regular">
+    <section class="family-card" id="font-family-16">
       <div class="family-head">
         <h2>佑字 朴</h2>
         <span class="count">1フォント</span>
@@ -504,7 +454,7 @@
       <p class="weights">Regular</p>
     </section>
 
-    <section class="family-card" id="font-family-17" data-search="佑字 舞 Regular Yuji Mai YujiMai-Regular YujiMai-Regular">
+    <section class="family-card" id="font-family-17">
       <div class="family-head">
         <h2>佑字 舞</h2>
         <span class="count">1フォント</span>
@@ -512,7 +462,7 @@
       <p class="weights">Regular</p>
     </section>
 
-    <section class="family-card" id="font-family-18" data-search="佑字 肅 Regular Yuji Syuku YujiSyuku-Regular YujiSyuku-Regular">
+    <section class="family-card" id="font-family-18">
       <div class="family-head">
         <h2>佑字 肅</h2>
         <span class="count">1フォント</span>
@@ -520,7 +470,7 @@
       <p class="weights">Regular</p>
     </section>
 
-    <section class="family-card" id="font-family-19" data-search="油性マジック Regular Yusei Magic YuseiMagic-Regular YuseiMagic-Regular">
+    <section class="family-card" id="font-family-19">
       <div class="family-head">
         <h2>油性マジック</h2>
         <span class="count">1フォント</span>
@@ -528,7 +478,7 @@
       <p class="weights">Regular</p>
     </section>
 
-    <section class="family-card" id="Zen" data-search="Zen アンチック Regular Zen Antique ZenAntique-Regular ZenAntique-Regular">
+    <section class="family-card" id="Zen">
       <div class="family-head">
         <h2>Zen アンチック</h2>
         <span class="count">1フォント</span>
@@ -536,7 +486,7 @@
       <p class="weights">Regular</p>
     </section>
 
-    <section class="family-card" id="Zen-Antique" data-search="Zen 角ゴシック Antique Regular Bold Black Zen Kaku Gothic Antique ZenKakuGothicAntique-Regular ZenKakuGothicAntique-Regular Zen Kaku Gothic Antique ZenKakuGothicAntique-Bold ZenKakuGothicAntique-Bold Zen Kaku Gothic Antique Black ZenKakuGothicAntique-Black ZenKakuGothicAntique-Black">
+    <section class="family-card" id="Zen-Antique">
       <div class="family-head">
         <h2>Zen 角ゴシック Antique</h2>
         <span class="count">3フォント</span>
@@ -544,7 +494,7 @@
       <p class="weights">Regular, Bold, Black</p>
     </section>
 
-    <section class="family-card" id="Zen-New" data-search="Zen 角ゴシック New Regular Bold Black Zen Kaku Gothic New ZenKakuGothicNew-Regular ZenKakuGothicNew-Regular Zen Kaku Gothic New ZenKakuGothicNew-Bold ZenKakuGothicNew-Bold Zen Kaku Gothic New Black ZenKakuGothicNew-Black ZenKakuGothicNew-Black">
+    <section class="family-card" id="Zen-New">
       <div class="family-head">
         <h2>Zen 角ゴシック New</h2>
         <span class="count">3フォント</span>
@@ -552,7 +502,7 @@
       <p class="weights">Regular, Bold, Black</p>
     </section>
 
-    <section class="family-card" id="Zen-2" data-search="Zen 紅道 Regular Zen Kurenaido ZenKurenaido-Regular ZenKurenaido-Regular">
+    <section class="family-card" id="Zen-2">
       <div class="family-head">
         <h2>Zen 紅道</h2>
         <span class="count">1フォント</span>
@@ -560,7 +510,7 @@
       <p class="weights">Regular</p>
     </section>
 
-    <section class="family-card" id="Zen-3" data-search="Zen 丸ゴシック Regular Bold Black Zen Maru Gothic ZenMaruGothic-Regular ZenMaruGothic-Regular Zen Maru Gothic ZenMaruGothic-Bold ZenMaruGothic-Bold Zen Maru Gothic Black ZenMaruGothic-Black ZenMaruGothic-Black">
+    <section class="family-card" id="Zen-3">
       <div class="family-head">
         <h2>Zen 丸ゴシック</h2>
         <span class="count">3フォント</span>
@@ -568,7 +518,7 @@
       <p class="weights">Regular, Bold, Black</p>
     </section>
 
-    <section class="family-card" id="Zen-Old" data-search="Zen Old 明朝 Regular SemiBold Black Zen Old Mincho ZenOldMincho-Regular ZenOldMincho-Regular Zen Old Mincho SemiBold ZenOldMincho-SemiBold ZenOldMincho-SemiBold Zen Old Mincho Black ZenOldMincho-Black ZenOldMincho-Black">
+    <section class="family-card" id="Zen-Old">
       <div class="family-head">
         <h2>Zen Old 明朝</h2>
         <span class="count">3フォント</span>
@@ -578,7 +528,6 @@
     
     
     </div>
-    <div id="emptyState" class="empty">一致するフォントが見つかりませんでした。</div>
   </main>
 
   <footer class="container">
@@ -586,9 +535,7 @@
   </footer>
 
   <script>
-    const input = document.getElementById('searchInput');
     const cards = Array.from(document.querySelectorAll('.family-card'));
-    const emptyState = document.getElementById('emptyState');
     const googleFontsFamilies = {
       'BIZ UDPゴシック': 'BIZ UDPGothic',
       'BIZ UDP明朝': 'BIZ UDPMincho',
@@ -642,10 +589,6 @@
       '解星デコール': 'Kaisei Decol'
     };
 
-    function normalize(text) {
-      return text.toLowerCase().replace(/\s+/g, '');
-    }
-
     function createGoogleFontsUrl(familyName) {
       return `https://fonts.google.com/specimen/${familyName.replace(/\s+/g, '+')}`;
     }
@@ -674,22 +617,7 @@
       });
     }
 
-    function filterCards() {
-      const query = normalize(input.value);
-      let visibleCount = 0;
-
-      cards.forEach(card => {
-        const text = normalize(`${card.innerText} ${card.dataset.search || ''}`);
-        const matched = !query || text.includes(query);
-        card.classList.toggle('hidden', !matched);
-        if (matched) visibleCount += 1;
-      });
-
-      emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
-    }
-
     addGoogleFontsLinks();
-    input.addEventListener('input', filterCards);
   </script>
 </body>
 </html>
