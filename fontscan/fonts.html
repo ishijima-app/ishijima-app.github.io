@@ -108,29 +108,20 @@
       letter-spacing: -0.01em;
     }
 
-    .count {
-      grid-column: 2;
-      grid-row: 1;
-      color: var(--subtle);
-      font-size: 0.9rem;
-      text-align: right;
-      white-space: nowrap;
-    }
-
     .weights {
-      grid-column: 2;
+      grid-column: 1;
       grid-row: 2;
       margin: 0;
       color: var(--subtle);
       font-size: 0.92rem;
       line-height: 1.55;
-      text-align: right;
       overflow-wrap: anywhere;
     }
 
     .family-link {
-      grid-column: 1;
+      grid-column: 2;
       grid-row: 2;
+      justify-self: end;
       margin: 0;
     }
 
@@ -175,10 +166,6 @@
     <h1>対応フォント一覧</h1>
     <div class="summary" aria-label="対応数">
       <div class="summary-card">
-        <span class="summary-label">フォントファミリー</span>
-        <span class="summary-value">42</span>
-      </div>
-      <div class="summary-card">
         <span class="summary-label">フォント数（ウェイト含む）</span>
         <span class="summary-value">75</span>
       </div>
@@ -193,7 +180,6 @@
     <section class="family-card" id="BIZ-UD">
       <div class="family-head">
         <h2>BIZ UDゴシック</h2>
-        <span class="count">2フォント</span>
       </div>
       <p class="weights">Regular, Bold</p>
     </section>
@@ -201,7 +187,6 @@
     <section class="family-card" id="BIZ-UD-2">
       <div class="family-head">
         <h2>BIZ UD明朝</h2>
-        <span class="count">2フォント</span>
       </div>
       <p class="weights">Regular, Bold</p>
     </section>
@@ -209,7 +194,6 @@
     <section class="family-card" id="One">
       <div class="family-head">
         <h2>デラゴシック One</h2>
-        <span class="count">1フォント</span>
       </div>
       <p class="weights">Regular</p>
     </section>
@@ -217,7 +201,6 @@
     <section class="family-card" id="16">
       <div class="family-head">
         <h2>ドットゴシック16</h2>
-        <span class="count">1フォント</span>
       </div>
       <p class="weights">Regular</p>
     </section>
@@ -225,7 +208,6 @@
     <section class="family-card" id="font-family">
       <div class="family-head">
         <h2>はちまるポップ</h2>
-        <span class="count">1フォント</span>
       </div>
       <p class="weights">Regular</p>
     </section>
@@ -233,7 +215,6 @@
     <section class="family-card" id="font-family-2">
       <div class="family-head">
         <h2>ひな明朝</h2>
-        <span class="count">1フォント</span>
       </div>
       <p class="weights">Regular</p>
     </section>
@@ -241,7 +222,6 @@
     <section class="family-card" id="IBM-Plex-Sans-JP">
       <div class="family-head">
         <h2>IBM Plex Sans JP</h2>
-        <span class="count">3フォント</span>
       </div>
       <p class="weights">Thin, Regular, Bold</p>
     </section>
@@ -249,7 +229,6 @@
     <section class="family-card" id="font-family-3">
       <div class="family-head">
         <h2>解星デコール</h2>
-        <span class="count">2フォント</span>
       </div>
       <p class="weights">Regular, Bold</p>
     </section>
@@ -257,7 +236,6 @@
     <section class="family-card" id="font-family-4">
       <div class="family-head">
         <h2>解星 春の海</h2>
-        <span class="count">2フォント</span>
       </div>
       <p class="weights">Regular, Bold</p>
     </section>
@@ -265,7 +243,6 @@
     <section class="family-card" id="font-family-5">
       <div class="family-head">
         <h2>解星オプティ</h2>
-        <span class="count">2フォント</span>
       </div>
       <p class="weights">Regular, Bold</p>
     </section>
@@ -273,7 +250,6 @@
     <section class="family-card" id="font-family-6">
       <div class="family-head">
         <h2>解星 特ミン</h2>
-        <span class="count">2フォント</span>
       </div>
       <p class="weights">Regular, Bold</p>
     </section>
@@ -281,7 +257,6 @@
     <section class="family-card" id="font-family-7">
       <div class="family-head">
         <h2>キウイ丸</h2>
-        <span class="count">1フォント</span>
       </div>
       <p class="weights">Regular</p>
     </section>
@@ -289,7 +264,6 @@
     <section class="family-card" id="One-2">
       <div class="family-head">
         <h2>クレー One</h2>
-        <span class="count">1フォント</span>
       </div>
       <p class="weights">Regular</p>
     </section>
@@ -297,7 +271,6 @@
     <section class="family-card" id="font-family-8">
       <div class="family-head">
         <h2>小杉</h2>
-        <span class="count">1フォント</span>
       </div>
       <p class="weights">Regular</p>
     </section>
@@ -305,7 +278,6 @@
     <section class="family-card" id="font-family-9">
       <div class="family-head">
         <h2>小杉丸</h2>
-        <span class="count">1フォント</span>
       </div>
       <p class="weights">Regular</p>
     </section>
@@ -313,7 +285,6 @@
     <section class="family-card" id="M-PLUS-1">
       <div class="family-head">
         <h2>M PLUS 1</h2>
-        <span class="count">3フォント</span>
       </div>
       <p class="weights">Regular, SemiBold, ExtraBold</p>
     </section>
@@ -321,7 +292,6 @@
     <section class="family-card" id="M-PLUS-2">
       <div class="family-head">
         <h2>M PLUS 2</h2>
-        <span class="count">3フォント</span>
       </div>
       <p class="weights">Regular, SemiBold, ExtraBold</p>
     </section>
@@ -329,7 +299,6 @@
     <section class="family-card" id="M-PLUS-Rounded-1c">
       <div class="family-head">
         <h2>M PLUS Rounded 1c</h2>
-        <span class="count">4フォント</span>
       </div>
       <p class="weights">Thin, Regular, Bold, Black</p>
     </section>
@@ -337,7 +306,6 @@
     <section class="family-card" id="One-3">
       <div class="family-head">
         <h2>モッチーポップ One</h2>
-        <span class="count">1フォント</span>
       </div>
       <p class="weights">Regular</p>
     </section>
@@ -345,7 +313,6 @@
     <section class="family-card" id="font-family-10">
       <div class="family-head">
         <h2>牟礼町</h2>
-        <span class="count">3フォント</span>
       </div>
       <p class="weights">Regular, SemiBold, ExtraBold</p>
     </section>
@@ -353,7 +320,6 @@
     <section class="family-card" id="font-family-11">
       <div class="family-head">
         <h2>ニューテゴミン</h2>
-        <span class="count">1フォント</span>
       </div>
       <p class="weights">Regular</p>
     </section>
@@ -361,7 +327,6 @@
     <section class="family-card" id="Noto-Sans-JP">
       <div class="family-head">
         <h2>Noto Sans JP</h2>
-        <span class="count">4フォント</span>
       </div>
       <p class="weights">Thin, Regular, SemiBold, Black</p>
     </section>
@@ -369,7 +334,6 @@
     <section class="family-card" id="Noto-Serif-JP">
       <div class="family-head">
         <h2>Noto Serif JP</h2>
-        <span class="count">4フォント</span>
       </div>
       <p class="weights">ExtraLight, Regular, SemiBold, Black</p>
     </section>
@@ -377,7 +341,6 @@
     <section class="family-card" id="One-4">
       <div class="family-head">
         <h2>ポッタ One</h2>
-        <span class="count">1フォント</span>
       </div>
       <p class="weights">Regular</p>
     </section>
@@ -385,7 +348,6 @@
     <section class="family-card" id="One-5">
       <div class="family-head">
         <h2>ランパート One</h2>
-        <span class="count">1フォント</span>
       </div>
       <p class="weights">Regular</p>
     </section>
@@ -393,7 +355,6 @@
     <section class="family-card" id="One-6">
       <div class="family-head">
         <h2>レゲエ One</h2>
-        <span class="count">1フォント</span>
       </div>
       <p class="weights">Regular</p>
     </section>
@@ -401,7 +362,6 @@
     <section class="family-card" id="One-7">
       <div class="family-head">
         <h2>ロックンロール One</h2>
-        <span class="count">1フォント</span>
       </div>
       <p class="weights">Regular</p>
     </section>
@@ -409,7 +369,6 @@
     <section class="family-card" id="font-family-12">
       <div class="family-head">
         <h2>さわらびゴシック</h2>
-        <span class="count">1フォント</span>
       </div>
       <p class="weights">Regular</p>
     </section>
@@ -417,7 +376,6 @@
     <section class="family-card" id="font-family-13">
       <div class="family-head">
         <h2>しっぽりアンチック</h2>
-        <span class="count">1フォント</span>
       </div>
       <p class="weights">Regular</p>
     </section>
@@ -425,7 +383,6 @@
     <section class="family-card" id="font-family-14">
       <div class="family-head">
         <h2>しっぽり明朝</h2>
-        <span class="count">3フォント</span>
       </div>
       <p class="weights">Regular, SemiBold, ExtraBold</p>
     </section>
@@ -433,7 +390,6 @@
     <section class="family-card" id="font-family-15">
       <div class="family-head">
         <h2>ステッキ</h2>
-        <span class="count">1フォント</span>
       </div>
       <p class="weights">Regular</p>
     </section>
@@ -441,7 +397,6 @@
     <section class="family-card" id="WDXL-Lubrifont-JPN">
       <div class="family-head">
         <h2>WDXL Lubrifont JPN</h2>
-        <span class="count">1フォント</span>
       </div>
       <p class="weights">Regular</p>
     </section>
@@ -449,7 +404,6 @@
     <section class="family-card" id="font-family-16">
       <div class="family-head">
         <h2>佑字 朴</h2>
-        <span class="count">1フォント</span>
       </div>
       <p class="weights">Regular</p>
     </section>
@@ -457,7 +411,6 @@
     <section class="family-card" id="font-family-17">
       <div class="family-head">
         <h2>佑字 舞</h2>
-        <span class="count">1フォント</span>
       </div>
       <p class="weights">Regular</p>
     </section>
@@ -465,7 +418,6 @@
     <section class="family-card" id="font-family-18">
       <div class="family-head">
         <h2>佑字 肅</h2>
-        <span class="count">1フォント</span>
       </div>
       <p class="weights">Regular</p>
     </section>
@@ -473,7 +425,6 @@
     <section class="family-card" id="font-family-19">
       <div class="family-head">
         <h2>油性マジック</h2>
-        <span class="count">1フォント</span>
       </div>
       <p class="weights">Regular</p>
     </section>
@@ -481,7 +432,6 @@
     <section class="family-card" id="Zen">
       <div class="family-head">
         <h2>Zen アンチック</h2>
-        <span class="count">1フォント</span>
       </div>
       <p class="weights">Regular</p>
     </section>
@@ -489,7 +439,6 @@
     <section class="family-card" id="Zen-Antique">
       <div class="family-head">
         <h2>Zen 角ゴシック Antique</h2>
-        <span class="count">3フォント</span>
       </div>
       <p class="weights">Regular, Bold, Black</p>
     </section>
@@ -497,7 +446,6 @@
     <section class="family-card" id="Zen-New">
       <div class="family-head">
         <h2>Zen 角ゴシック New</h2>
-        <span class="count">3フォント</span>
       </div>
       <p class="weights">Regular, Bold, Black</p>
     </section>
@@ -505,7 +453,6 @@
     <section class="family-card" id="Zen-2">
       <div class="family-head">
         <h2>Zen 紅道</h2>
-        <span class="count">1フォント</span>
       </div>
       <p class="weights">Regular</p>
     </section>
@@ -513,7 +460,6 @@
     <section class="family-card" id="Zen-3">
       <div class="family-head">
         <h2>Zen 丸ゴシック</h2>
-        <span class="count">3フォント</span>
       </div>
       <p class="weights">Regular, Bold, Black</p>
     </section>
@@ -521,7 +467,6 @@
     <section class="family-card" id="Zen-Old">
       <div class="family-head">
         <h2>Zen Old 明朝</h2>
-        <span class="count">3フォント</span>
       </div>
       <p class="weights">Regular, SemiBold, Black</p>
     </section>
